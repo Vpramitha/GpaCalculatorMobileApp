@@ -8,8 +8,8 @@ import {
   StyleSheet,
 } from "react-native";
 
-export default function FormModal({ visible, onClose, onSubmit }) {
-  const [formData, setFormData] = useState({ Code: "", Course: "",Result:"" });
+export default function NewDegreeModal({ visible, onClose, onSubmit }) {
+  const [formData, setFormData] = useState({ DegreeName: "", University: "" ,NumOfYears:"" });
 
   const handleInputChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
@@ -29,30 +29,32 @@ export default function FormModal({ visible, onClose, onSubmit }) {
     >
       <View style={styles.modalContainer}>
         <View style={styles.modalView}>
-          <Text style={styles.modalTitle}>Add Course</Text>
+          <Text style={styles.modalTitle}>
+            Fill the Form About The New Degree
+          </Text>
 
           <TextInput
             style={styles.input}
-            placeholder="Enter Course Code"
-            value={formData.Code}
-            onChangeText={(text) => handleInputChange("Code", text)}
+            placeholder="Enter Name of the Degree"
+            value={formData.DegreeName}
+            onChangeText={(text) => handleInputChange("DegreeName", text)}
           />
           <TextInput
             style={styles.input}
-            placeholder="Enter Course Name"
-            value={formData.Course}
-            onChangeText={(text) => handleInputChange("Course", text)}
+            placeholder="Enter Name of the University/Collage"
+            value={formData.University}
+            onChangeText={(text) => handleInputChange("University", text)}
           />
 
           <TextInput
             style={styles.input}
-            placeholder="Enter Result"
-            value={formData.Result}
-            onChangeText={(text) => handleInputChange("Result", text)}
+            placeholder="Number of years for complete degree"
+            value={formData.NumOfYears}
+            onChangeText={(text) => handleInputChange("NumOfYears", text)}
           />
 
           <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-            <Text style={styles.buttonText}>Submit</Text>
+            <Text style={styles.buttonText}>Save Degree</Text>
           </TouchableOpacity>
 
           <TouchableOpacity

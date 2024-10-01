@@ -24,7 +24,7 @@ export default function Marks() {
       <MarkTable />
       <Text>Current GPA: {CurrentGPA}</Text>
       <Text>GPA only for this semester: {GPAforSem}</Text>
-      <Button title="Open Form" onPress={() => setModalVisible(true)} />
+      <Button title="Add Course" onPress={() => setModalVisible(true)} />
 
       {/* The modal */}
       <FormModal
